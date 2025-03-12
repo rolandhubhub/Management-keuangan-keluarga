@@ -1,0 +1,13 @@
+public class PengaturanUangKeluarga {
+    public static void main(String[] args) {
+        UangKeluarga uangKeluarga = new UangKeluarga(1000000, 500000);
+
+        uangKeluarga.tampilkanRingkasan();
+
+        uangKeluarga.tambahPemasukan(200000);
+
+        uangKeluarga.tambahPengeluaran(300000);
+
+        uangKeluarga.tampilkanRingkasan();
+    }
+}
