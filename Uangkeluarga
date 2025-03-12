@@ -1,0 +1,39 @@
+public class UangKeluarga {
+    private double pemasukan;
+    private double pengeluaran;
+
+    public UangKeluarga(double pemasukan, double pengeluaran) {
+        this.pemasukan = pemasukan;
+        this.pengeluaran = pengeluaran;
+    }
+
+    public void tambahPemasukan(double jumlah) {
+        if (jumlah > 0) {
+            pemasukan += jumlah;
+            System.out.println("Pemasukan berhasil ditambah: Rp" + jumlah);
+        } else {
+            System.out.println("Jumlah pemasukan tidak valid.");
+        }
+    }
+
+    public void tambahPengeluaran(double jumlah) {
+        if (jumlah > 0 && jumlah <= pemasukan) {
+            pengeluaran += jumlah;
+            System.out.println("Pengeluaran berhasil ditambah: Rp" + jumlah);
+        } else {
+            System.out.println("Jumlah pengeluaran tidak valid atau melebihi pemasukan.");
+        }
+    }
+
+    public double hitungSisaUang() {
+        return pemasukan - pengeluaran;
+    }
+
+    public void tampilkanRingkasan() {
+        System.out.println("===== Ringkasan Keuangan Keluarga =====");
+        System.out.println("Total Pemasukan: Rp" + pemasukan);
+        System.out.println("Total Pengeluaran: Rp" + pengeluaran);
+        System.out.println("Sisa Uang: Rp" + hitungSisaUang());
+        System.out.println("======================================");
+    }
+}
